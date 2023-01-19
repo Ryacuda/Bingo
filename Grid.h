@@ -2,13 +2,14 @@
 
 #include <vector>
 #include <stdexcept>
+#include "Event.h"
 
 /*
 * A simple two dimensionnal vector with set dimensions. Can store most base types (?).
 * 
 * Set dimensions means that you have to specify them at creation, and can't change them after that.
 */
-template <class T>
+template <typename T = void>
 class Grid
 {
 public:
@@ -23,6 +24,8 @@ public:
 	T getElement(size_t x, size_t y);
 
 	// Methods
+
+	void populate(const std::vector<T>& v);
 
 private:
 	std::vector<std::vector<T>> m_array;
