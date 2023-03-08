@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <stdexcept>
-#include "Event.h"
+#include "BingoElement.h"
 
 /*
 * A simple two dimensionnal vector with set dimensions. Can store most base types (?).
@@ -27,6 +27,6 @@ public:
 
 	void populate(const std::vector<T>& v);
 
-private:
+	// Members
 	std::vector<std::vector<T>> m_array;
 };

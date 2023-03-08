@@ -51,6 +51,6 @@ void Grid<T>::populate(const std::vector<T>& v)
 	}
 }
 
-// explicit instantiations
-// we can only use Grid<Event>
-template class Grid<Event>;
+// Explicit instantiations
+// We can only use Grid<BingoElement>
+template class Grid<BingoElement>;

@@ -3,18 +3,27 @@
 #include <string>
 #include "json.hpp"
 
-class Event
+class BingoElement
 {
 public:
 	// Constructors
-	Event();
+	BingoElement();
 
-	Event(const std::string& name);
+	BingoElement(const std::string& name);
 
 	// Accessors
 	std::string getName();
 
 	void setName(const std::string& name);
+
+	bool checked();
+
+	// Methods
+
+	/*
+	* Inverts the m_check boolean, and returns its new value.
+	*/
+	bool check();
 
 private:
 	std::string m_name;
@@ -25,4 +34,4 @@ private:
 
 // Other functions
 
-std::vector<Event> generateBasicEvents(int n);
+std::vector<BingoElement> generateBasicElements(int n);

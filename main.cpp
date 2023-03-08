@@ -3,7 +3,7 @@
 
 int main()
 {
-	std::vector<Event> test = generateBasicEvents(25);
+	std::vector<BingoElement> test = generateBasicElements(25);
 
 	BingoGrid test_bg(5, 5);
 
