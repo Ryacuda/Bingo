@@ -1,35 +1,6 @@
 ﻿  BingoGrid.cpp
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'Grid<Event>::Grid(size_t,size_t)': no suitable definition provided for explicit template instantiation request
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(17,2): message : see declaration of 'Grid<Event>::Grid'
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'size_t Grid<Event>::getWidth(void)': no suitable definition provided for explicit template instantiation request
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(20,9): message : see declaration of 'Grid<Event>::getWidth'
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'size_t Grid<Event>::getHeight(void)': no suitable definition provided for explicit template instantiation request
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(22,9): message : see declaration of 'Grid<Event>::getHeight'
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'T Grid<T>::getElement(size_t,size_t)': no suitable definition provided for explicit template instantiation request
-          with
-          [
-              T=Event
-          ]
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(24,4): message : see declaration of 'Grid<Event>::getElement'
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'void Grid<Event>::populate(std::vector<Event,std::allocator<Event>>)': no suitable definition provided for explicit template instantiation request
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(28,7): message : see declaration of 'Grid<Event>::populate'
+  BingoElement.cpp
   Grid.cpp
   main.cpp
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'Grid<Event>::Grid(size_t,size_t)': no suitable definition provided for explicit template instantiation request
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(17,2): message : see declaration of 'Grid<Event>::Grid'
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'size_t Grid<Event>::getWidth(void)': no suitable definition provided for explicit template instantiation request
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(20,9): message : see declaration of 'Grid<Event>::getWidth'
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'size_t Grid<Event>::getHeight(void)': no suitable definition provided for explicit template instantiation request
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(22,9): message : see declaration of 'Grid<Event>::getHeight'
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'T Grid<T>::getElement(size_t,size_t)': no suitable definition provided for explicit template instantiation request
-          with
-          [
-              T=Event
-          ]
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(24,4): message : see declaration of 'Grid<Event>::getElement'
-C:\Users\Adam\Documents\Code\Bingo\BingoGrid.h(7,27): warning C4661: 'void Grid<Event>::populate(std::vector<Event,std::allocator<Event>>)': no suitable definition provided for explicit template instantiation request
-C:\Users\Adam\Documents\Code\Bingo\Grid.h(28,7): message : see declaration of 'Grid<Event>::populate'
   Generating Code...
-BingoGrid.obj : error LNK2019: unresolved external symbol "public: __cdecl Grid<class Event>::Grid<class Event>(unsigned __int64,unsigned __int64)" (??0?$Grid@VEvent@@@@QEAA@_K0@Z) referenced in function "public: __cdecl BingoGrid::BingoGrid(unsigned __int64,unsigned __int64)" (??0BingoGrid@@QEAA@_K0@Z)
-main.obj : error LNK2019: unresolved external symbol "public: void __cdecl Grid<class Event>::populate(class std::vector<class Event,class std::allocator<class Event> >)" (?populate@?$Grid@VEvent@@@@QEAAXV?$vector@VEvent@@V?$allocator@VEvent@@@std@@@std@@@Z) referenced in function main
-C:\Users\Adam\Documents\Code\Bingo\x64\Debug\Bingo.exe : fatal error LNK1120: 2 unresolved externals
+  Bingo.vcxproj -> C:\Users\Adam\Documents\Code\Bingo\x64\Debug\Bingo.exe

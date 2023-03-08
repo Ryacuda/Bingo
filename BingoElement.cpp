@@ -2,12 +2,12 @@
 
 // Constructors
 
-BingoElement::BingoElement() : m_name("0")
+BingoElement::BingoElement() : m_name("0"), m_checked(false)
 {
 
 }
 
-BingoElement::BingoElement(const std::string& name) : m_name(name)
+BingoElement::BingoElement(const std::string& name) : m_name(name), m_checked(false)
 {
 
 }
@@ -35,16 +35,4 @@ bool BingoElement::check()
 {
 	m_checked = !m_checked;
 	return m_checked;
-}
-
-std::vector<BingoElement> generateBasicElements(int n)
-{
-	std::vector<BingoElement> v(n);
-
-	for (size_t i = 0; i < n; i++)
-	{
-		v[i].setName(std::to_string(i + 1));
-	}
-
-	return v;
 }

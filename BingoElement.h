@@ -31,7 +31,3 @@ private:
 	// image
 	// description
 };
-
-// Other functions
-
-std::vector<BingoElement> generateBasicElements(int n);

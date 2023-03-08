@@ -3,11 +3,7 @@
 
 int main()
 {
-	std::vector<BingoElement> test = generateBasicElements(25);
-
-	BingoGrid test_bg(5, 5);
-
-	test_bg.populate(test);
+	// empty app for now, tests elsewhere 
 
 	return 0;
 }
