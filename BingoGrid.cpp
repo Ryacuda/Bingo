@@ -2,90 +2,67 @@
 
 // Constructors
 
-BingoGrid::BingoGrid(size_t size) : Grid<BingoElement>(size, size)
+BingoGrid::BingoGrid(size_t size) : Grid<BingoElement>(size, size), m_bingo(0)
 {
 
 }
 
 // Methods
 
-bool BingoGrid::checkElement(size_t line, size_t column)
+void BingoGrid::checkElement(size_t line, size_t column)
+{
+	// Invert the check status of the BingoElement in line, column
+	m_array[line][column].check();
+
+	evaluate();
+}
+
+void BingoGrid::evaluate()
 {
 	// the width and the height of the grid are the same for a BingoGrid, we save a few function calls by storing this value
 	const size_t size = getWidth();
 
-	// Invert the check status of the BingoElement in line, column
-	if (!m_array[line][column].check())
-	{
-		// if the m_check value turned to false, a new bingo cannot happen
-		return false;
-	}
+	unsigned short bingo_line = 0;
+	unsigned short bingo_columns = 0;
 
-	// Check lines, column, diagonals where the check value is now true
-
-	// line
-	bool bingo = true;
-	for (size_t y = 0; y < size; y++)
+	// Evaluate if there is any bingo in the lines and columns
+	for (size_t i = 0; i < size; i++)
 	{
-		if (!m_array[line][y].checked())
+		// flag booleans for lines & column
+		bool bc = true;		// column
+		bool bl = true;		// line
+	
+		for (size_t j = 0; j < size; j++)
 		{
-			bingo = false;
-		}
+			bl &= m_array[i][j].checked();
+			bc &= m_array[j][i].checked();
+		}		
+
+		bingo_line += bl;
+		bingo_columns += bc;
 	}
 
-	if (bingo)
+	// Evaluate if there is any bingo in the diagonals
+	unsigned short bingo_diagonals = 0;
+
+	bool bd1 = true;
+	bool bd2 = true;
+
+	for (size_t i = 0; i < size; i++)
 	{
-		return true;
+		bd1 &= m_array[i][i].checked();
+		bd2 &= m_array[i][size - i - 1].checked();
 	}
 
-	// column
-	bingo = true;
-	for (size_t x = 0; x < size; x++)
-	{
-		if (!m_array[x][column].checked())
-		{
-			bingo = false;
-		}
-	}
+	bingo_diagonals += bd1;
+	bingo_diagonals += bd2;
 
-	if (bingo)
-	{
-		return true;
-	}
+	m_bingo = bingo_columns + bingo_diagonals + bingo_line;
+}
 
-	// Test to see if the Event at line, column is in one of the diagonals that can house a bingo
+// Accessors
 
-	// top left - bottom right diagonal
-	bingo = true;
-	if (line == column)						// all the elements of the (top left - bottom right) diagonal of a square grid have their x and y coordinates equal
-	{
-		for (size_t x = 0; x < size; x++)
-		{
-			if (!m_array[x][x].checked())
-			{
-				bingo = false;
-			}
-		}
-	}
-
-	if (bingo)
-	{
-		return true;
-	}
-
-	// top right - bottom left diagonal
-	bingo = true;
-	if (line + column + 1 == size)			// all the elements of the (top right - bottom left) diagonal of a square grid have the sum of their x and y coordinates equal to the width of the grid - 1
-	{
-		for (size_t x = 0; x < size; x++)
-		{
-			size_t y = size - x - 1;		// size = x + y + 1
-			if (!m_array[x][y].checked())
-			{
-				bingo = false;
-			}
-		}
-	}
-
-	return bingo;
+unsigned short BingoGrid::getBingo()
+{
+	return m_bingo;
 }

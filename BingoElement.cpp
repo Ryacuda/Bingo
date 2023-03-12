@@ -2,12 +2,12 @@
 
 // Constructors
 
-BingoElement::BingoElement() : m_name("0"), m_checked(false)
+BingoElement::BingoElement() : m_name("0"), m_checked(false), m_bingo(0)
 {
 
 }
 
-BingoElement::BingoElement(const std::string& name) : m_name(name), m_checked(false)
+BingoElement::BingoElement(const std::string& name) : m_name(name), m_checked(false), m_bingo(0)
 {
 
 }
@@ -31,8 +31,7 @@ bool BingoElement::checked()
 
 // Other functions
 
-bool BingoElement::check()
+void BingoElement::check()
 {
 	m_checked = !m_checked;
-	return m_checked;
 }

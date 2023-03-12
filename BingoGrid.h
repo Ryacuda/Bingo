@@ -9,8 +9,14 @@ public:
 	BingoGrid(size_t size);
 
 	// Methods
-	bool checkElement(size_t x, size_t y);
+	void checkElement(size_t x, size_t y);
+
+	void evaluate();
+
+	// Accessors
+
+	unsigned short getBingo();
 
 private:
-	
+	unsigned short m_bingo;
 };

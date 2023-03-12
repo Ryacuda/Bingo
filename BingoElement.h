@@ -23,11 +23,12 @@ public:
 	/*
 	* Inverts the m_check boolean, and returns its new value.
 	*/
-	bool check();
+	void check();
 
 private:
 	std::string m_name;
 	bool m_checked;
+	unsigned short m_bingo;
 	// image
 	// description
 };
