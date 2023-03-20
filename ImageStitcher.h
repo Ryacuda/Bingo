@@ -1,6 +1,10 @@
 #include <Magick++.h>
 #include <iostream>
 #include <filesystem>
+#include <algorithm>
+#include <string>
+
+
 namespace fs = std::filesystem;
 
 #pragma once
@@ -30,3 +34,9 @@ private:
 	unsigned short m_cellwidth;
 	unsigned short m_cellheight;
 };
+
+// Other helpful functions
+
+bool iequals(const std::string& a, const std::string& b);
+
+bool is_valid_ext(const std::string& str);
