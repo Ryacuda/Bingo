@@ -34,9 +34,19 @@ fs::path ImageStitcher::getResultpath()
 
 void ImageStitcher::stitch()
 {
+	// Get the path of all the images we'll stitch together
+	std::vector<fs::path> img_paths;
+
 	for (const auto& entry : fs::directory_iterator(m_images))
+	{
 		if (is_valid_ext(entry.path().extension().string()))
-			std::cout << entry << std::endl;
+		{
+			// The file is an image, we add it to the list
+			img_paths.push_back(entry.path());
+		}
+	}
+
+	// We create a support image with the right size
 }
 
 // Other helpful functions
